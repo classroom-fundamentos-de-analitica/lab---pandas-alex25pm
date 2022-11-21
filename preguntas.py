@@ -35,7 +35,9 @@ def pregunta_02():
     4
 
     """
-    return
+    a=tbl0.shape
+    
+    return a[1]
 
 
 def pregunta_03():
@@ -52,6 +54,8 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
+    y= tbl0._c1.count()
+    
     return
 
 
