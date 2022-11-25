@@ -185,6 +185,7 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
+    g = pd.DataFrame(columns=['_c0', '_c1'])
     for letra in df["_c1"].unique():
         y=df[df["_c1"]==letra]
         f=list(y["_c2"])
@@ -192,12 +193,14 @@ def pregunta_10():
         for item in f:
             string = string + str(item) + ":"
             t=string[:-1]
-  
-        g = pd.DataFrame({"_c0":[letra], "_c1": t})
-        data = data.append(g, ignore_index=True)
+
+        nuevo_registro = {"_c0": letra,"_c1": t }
+        g = g.append(nuevo_registro, ignore_index=True)
+
+    h= g.sort_values("_c0")
 
     
-    return data
+    return h
 
 
 def pregunta_11():
