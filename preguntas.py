@@ -219,18 +219,21 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    dataf = pd.DataFrame()
-    for letra in tbl1["_c0"].unique():
-        df = np.where(tbl1["_c0"]==letra,tbl1["_c4"],"")
-        df = np.delete(df, np.where(df == ""))
+    g = pd.DataFrame(columns=['_c0', '_c1'])
+    for letra in tblq["_c0"].unique():
+        y=tblq[tblq["_c0"]==letra]
+        f=list(y["_c4"])
         string = ""
-        for item in list(np.sort(df, axis=0)):
+        for item in f:
             string = string + str(item) + ","
-        string = string[:-1]
-        temp = pd.DataFrame({"_c0":[letra], "_c4": string})
-        dataf = dataf.append(temp, ignore_index=True)
+            t=string[:-1]
+
+        nuevo_registro = {"_c0": letra,"_c4": t }
+        g = g.append(nuevo_registro, ignore_index=True)
+
+    h= g.sort_values("_c0")
     
-    return dataf
+    return h
 
 
 def pregunta_12():
