@@ -186,8 +186,8 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     g = pd.DataFrame(columns=['_c0', '_c1'])
-    for letra in df["_c1"].unique():
-        y=df[df["_c1"]==letra]
+    for letra in tbl0["_c1"].unique():
+        y=tbl0[tbl0["_c1"]==letra]
         f=list(y["_c2"])
         string = ""
         for item in f:
