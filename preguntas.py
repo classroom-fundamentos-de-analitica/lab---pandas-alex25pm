@@ -220,8 +220,8 @@ def pregunta_11():
     39   39    a,d,f
     """
     g = pd.DataFrame(columns=['_c0', '_c1'])
-    for letra in tblq["_c0"].unique():
-        y=tblq[tblq["_c0"]==letra]
+    for letra in tbl1["_c0"].unique():
+        y=tbl1[tbl1["_c0"]==letra]
         f=list(y["_c4"])
         string = ""
         for item in f:
