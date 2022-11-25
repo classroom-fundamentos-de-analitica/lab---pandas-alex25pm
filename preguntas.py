@@ -185,18 +185,19 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    dataf = pd.DataFrame()
-    for letra in tbl0["_c1"].unique():
-        df = np.where(tbl0["_c1"]==letra,tbl0["_c2"],"")
-        df = np.delete(df, np.where(df == ""))
+    for letra in df["_c1"].unique():
+        y=df[df["_c1"]==letra]
+        f=list(y["_c2"])
         string = ""
-        for item in list(np.sort(df, axis=0)):
+        for item in f:
             string = string + str(item) + ":"
-        string = string[:-1]
-        temp = pd.DataFrame({"_c0":[letra], "_c1": string})
-        dataf = dataf.append(temp, ignore_index=True)
+            t=string[:-1]
+  
+        g = pd.DataFrame({"_c0":[letra], "_c1": t})
+        data = data.append(g, ignore_index=True)
+
     
-    return dataf.sort_values("_c0").reset_index().drop("index", axis =1)
+    return data
 
 
 def pregunta_11():
