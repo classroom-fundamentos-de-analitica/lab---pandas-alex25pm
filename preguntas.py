@@ -175,10 +175,9 @@ def pregunta_10():
     """
     Construya una tabla que contenga _c1 y una lista separada por ':' de los valores de
     la columna _c2 para el archivo `tbl0.tsv`.
-
     Rta/
-                                   _c1
-      _c0
+                                   _c2
+      _c1
     0   A              1:1:2:3:6:7:8:9
     1   B                1:3:4:5:6:8:9
     2   C                    0:5:6:7:9
@@ -195,15 +194,13 @@ def pregunta_10():
         string = string[:-1]
         temp = pd.DataFrame({"_c1":[letra], "_c2": string})
         dataf = dataf.append(temp, ignore_index=True)
-    y= dataf.sort_values("_c1").set_index("_c1")
-    return y
+    return dataf.sort_values("_c1").set_index("_c1")
 
 
 def pregunta_11():
     """
     Construya una tabla que contenga _c0 y una lista separada por ',' de los valores de
     la columna _c4 del archivo `tbl1.tsv`.
-
     Rta/
         _c0      _c4
     0     0    b,f,g
@@ -225,7 +222,7 @@ def pregunta_11():
         string = string[:-1]
         temp = pd.DataFrame({"_c0":[letra], "_c4": string})
         dataf = dataf.append(temp, ignore_index=True)
-    
+
     return dataf
 
 
